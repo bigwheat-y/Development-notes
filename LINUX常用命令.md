@@ -88,3 +88,9 @@ git config --global http.proxy http://127.0.0.1:7890
 git config --global https.proxy https://127.0.0.1:7890
 ```
 
+#### 文件解压
+
+````bash
+tar -zxvf 文件名
+````
+
