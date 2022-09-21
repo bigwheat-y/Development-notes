@@ -93,4 +93,15 @@ git config --global https.proxy https://127.0.0.1:7890
 ````bash
 tar -zxvf 文件名
 ````
+#### wget下载使用过代理
+wget本身没有专门设置代理的命令行参数，但是有一个"-e"参数，可以在命令行上指定一个原本出现在".wgetrc"中的设置。于是可以变相在命令行上指定代理：
 
+-e, --execute=COMMAND   执行`.wgetrc'格式的命令
+例如：
+wget -c -r -np -k -L -p -e "http_proxy=http://127.0.0.1:8087" http://www.subversion.org.cn/svnbook/1.4/
+ 这种方式对于使用一个临时代理尤为方便。
+
+#### apt使用代理下载
+sudo apt-get -o Acquire::http::proxy="http://192.168.2.4:7890/"  install jellyfin
+#### jellyfin启动命令
+nohup jellyfin -w /usr/share/jellyfin/web &
